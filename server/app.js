@@ -130,7 +130,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
       );
 
       const subject = "New Table Aura Deal";
-      const bodyHtml = `<p>Check out our new deal for ${discount}% off at a restaurant near you! Click <a href="http://localhost:3000/api/discount?code=${trackingCode}">here</a> to get your coupon code. Use the coupon code when you purchase any meal in-store.</p>`;
+      const bodyHtml = `<p>Check out our new deal for ${discount}% off at a restaurant near you! Click <a href="${process.env.PROD_URL}/api/discount?code=${trackingCode}">here</a> to get your coupon code. Use the coupon code when you purchase any meal in-store.</p>`;
       await sendEmail(data.email, subject, bodyHtml);
     })
     .on("end", () => {
