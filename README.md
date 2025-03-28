@@ -32,4 +32,13 @@ cd client && pnpm i && pnpm run build
 docker compose up --build
 ```
 
+### How to Use
+
 Access the website by visiting http://localhost:3000
+
+Upload CSV files in the following format:
+
+```
+name,phone,email
+Bob Jones,111-222-3333,test@email.com
+```
